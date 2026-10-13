@@ -5,13 +5,14 @@ const crypto = require('node:crypto');
 const cheerio = require('cheerio');
 const MarkdownIt = require('markdown-it');
 const mathPlugin = require('@renbaoshuo/markdown-it-katex');
+const yaml = require('js-yaml');
 
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'public');
 const report = require('../migration/report.json');
 const redirects = require('../migration/redirects.json');
 const failures = [], warnings = [];
-const result = { htmlPages: 0, recoveredMath: 0, recoveredCodeBlocks: 0, encryptedPages: 0, redirects: 0, editedSources: [], failures, warnings };
+const result = { htmlPages: 0, publicationDates: 0, recoveredMath: 0, recoveredCodeBlocks: 0, encryptedPages: 0, redirects: 0, editedSources: [], failures, warnings };
 const sha = value => crypto.createHash('sha256').update(value).digest('hex');
 function check(condition, message) { if (!condition) failures.push(message); }
 function load(file) { return cheerio.load(fs.readFileSync(path.join(output, file), 'utf8')); }
@@ -29,6 +30,16 @@ function multiset(values) {
   const map = new Map();
   for (const value of values) map.set(value, (map.get(value) || 0) + 1);
   return map;
+}
+
+// Compare displayed publication instants with authored dates, including on UTC CI.
+for (const post of report.posts) {
+  if (!fs.existsSync(path.join(output, post.original))) continue;
+  const source = fs.readFileSync(path.join(root, post.source), 'utf8');
+  const frontMatter = yaml.load(source.match(/^---\r?\n([\s\S]*?)\r?\n---/)[1]);
+  const actual = load(post.original)('time[itemprop~="datePublished"]').first().attr('datetime');
+  check(actual && new Date(actual).getTime() === new Date(frontMatter.date).getTime(), `Publication timezone changed: ${post.title}`);
+  result.publicationDates++;
 }
 
 for (const p of [...report.posts, ...report.pages]) {

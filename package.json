@@ -7,10 +7,10 @@
     "node": ">=24 <25"
   },
   "scripts": {
-    "start": "hexo server --ip 127.0.0.1",
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "new": "hexo new",
+    "start": "node tooling/hexo.cjs server --ip 127.0.0.1",
+    "build": "node tooling/hexo.cjs generate",
+    "clean": "node tooling/hexo.cjs clean",
+    "new": "node tooling/hexo.cjs new",
     "check": "node tooling/verify-site.cjs"
   },
   "hexo": {
