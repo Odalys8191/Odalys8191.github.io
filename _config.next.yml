@@ -5,6 +5,7 @@ menu:
   home: / || fa fa-home
   archives: /archives/ || fa fa-archive
   tags: /tags/ || fa fa-tags
+  友链: /friends/ || fa fa-link
   about: /about/ || fa fa-user
 menu_settings:
   icons: false

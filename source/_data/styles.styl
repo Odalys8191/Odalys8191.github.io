@@ -48,9 +48,71 @@ eqn, eqnarray
 .main-inner.index .post-title
   font-size 24px
 
+.post-body .friend-links
+  display grid
+  grid-template-columns repeat(2, minmax(0, 1fr))
+  gap 16px
+  list-style none
+  margin 0
+  padding 0
+
+.post-body .friend-links > li
+  margin 0
+
+.post-body .friend-card
+  display flex
+  align-items center
+  gap 16px
+  height 100%
+  box-sizing border-box
+  padding 20px
+  border 1px solid #e8e8e8
+  border-left 3px solid var(--friend-color)
+  border-radius 8px
+  text-decoration none
+  transition background-color .15s ease, border-color .15s ease
+
+.post-body .friend-card:hover, .post-body .friend-card:focus-visible
+  background #f7f7f7
+  border-color var(--friend-color)
+
+.post-body .friend-card:focus-visible
+  outline 2px solid #333
+  outline-offset 3px
+
+.post-body .friend-avatar
+  width 64px
+  height 64px
+  flex-shrink 0
+  margin 0
+  padding 0
+  border-radius 50%
+  object-fit cover
+
+.friend-info
+  min-width 0
+
+.friend-name, .friend-description
+  display block
+
+.friend-name
+  color #333
+  font-weight 600
+  line-height 1.5
+
+.friend-description
+  margin-top 4px
+  color #666
+  font-size 14px
+  line-height 1.6
+
 @media (max-width: 767px)
   .post-body
     font-size 16px
+
+@media (max-width: 600px)
+  .post-body .friend-links
+    grid-template-columns minmax(0, 1fr)
 
 @media (prefers-reduced-motion: reduce)
   *, *::before, *::after
