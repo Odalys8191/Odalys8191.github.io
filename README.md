@@ -49,7 +49,7 @@ cd blog
 源码已合入 `main`，`master` 保留原站发布快照。首次启用自动部署时，需要以下仓库设置：
 
 1. 仓库 `Settings → Pages → Build and deployment → Source` 选择 **GitHub Actions**。
-2. 若 `github-pages` 环境有限制，在 `Settings → Environments → github-pages` 中允许 `main` 部署。
+2. 在 `Settings → Environments → github-pages → Deployment branches and tags` 中检查允许列表。如果只有旧分支 `master`，保留它并添加 `main` 分支规则（`Add deployment branch or tag rule → Branch → main`）。仅切换 Pages 的 Source 不会自动移除旧环境限制。
 3. 在 `Actions → Build and publish Hexo` 中检查运行结果；必要时在 `main` 手动运行一次。
 
 恢复分支只构建和校验，不部署。`main` 的推送会自动构建、校验并部署。使用 GitHub 自带的 `GITHUB_TOKEN`，无需把个人访问令牌写进配置。
