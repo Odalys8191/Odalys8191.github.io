@@ -1,0 +1,67 @@
+scheme: Muse
+darkmode: false
+preconnect: false
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags
+  about: /about/ || fa fa-user
+menu_settings:
+  icons: false
+  badges: false
+sidebar:
+  display: hide
+avatar:
+  url: /images/avatar.jpg
+  rounded: false
+  rotated: false
+favicon:
+  small: /images/favicon.ico
+  medium: /images/favicon.ico
+  apple_touch_icon: /images/apple-touch-icon.png
+  safari_pinned_tab: false
+font:
+  enable: false
+motion:
+  enable: false
+pjax: false
+fancybox: false
+mediumzoom: false
+lazyload: false
+pace:
+  enable: false
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: false
+post_meta:
+  updated_at:
+    enable: false
+symbols_count_time:
+  separated_meta: false
+  item_text_total: false
+footer:
+  since: 2020
+  powered: false
+  beian:
+    enable: false
+math:
+  every_page: true
+  mathjax:
+    enable: false
+  katex:
+    enable: true
+    copy_tex: false
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  preload: false
+vendors:
+  internal: local
+  fontawesome: /vendor/fontawesome/css/all.min.css
+  katex: /vendor/katex/katex.min.css
+  local_search: /vendor/search/search.js
+custom_file_path:
+  head: source/_data/head.njk
+  style: source/_data/styles.styl

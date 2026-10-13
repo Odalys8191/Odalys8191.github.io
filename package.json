@@ -1,0 +1,41 @@
+{
+  "name": "odalys-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Odalys 的 Hexo 博客源码",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "hexo server --ip 127.0.0.1",
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "new": "hexo new",
+    "check": "node tooling/verify-site.cjs"
+  },
+  "hexo": {
+    "version": "8.1.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "7.3.1",
+    "@renbaoshuo/markdown-it-katex": "2.0.2",
+    "hexo": "8.1.2",
+    "hexo-cli": "4.3.2",
+    "hexo-generator-archive": "2.0.0",
+    "hexo-generator-category": "2.0.0",
+    "hexo-generator-index": "4.0.0",
+    "hexo-generator-searchdb": "1.5.0",
+    "hexo-generator-tag": "2.0.0",
+    "hexo-renderer-markdown-it": "7.1.1",
+    "hexo-renderer-stylus": "3.0.1",
+    "hexo-server": "3.0.0",
+    "hexo-theme-next": "8.29.0",
+    "katex": "0.19.0"
+  },
+  "devDependencies": {
+    "cheerio": "1.2.0",
+    "js-yaml": "4.3.2",
+    "turndown": "7.2.4",
+    "turndown-plugin-gfm": "1.0.2"
+  }
+}

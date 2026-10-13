@@ -1,0 +1,59 @@
+body
+  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+  color #333
+
+.post-body
+  font-size 17px
+  line-height 1.95
+  overflow-wrap break-word
+
+.post-body h2, .post-body h3
+  line-height 1.5
+
+.post-body img
+  height auto
+  border 0
+
+.post-body .katex
+  font-size 1.06em
+
+.post-body .katex-display
+  overflow-x auto
+  overflow-y hidden
+  padding .45em 0
+
+.post-body .katex-display > .katex
+  white-space nowrap
+
+eqn, eqnarray
+  display block
+  overflow-x auto
+  text-align center
+
+.post-body pre, .post-body code
+  font-family "SFMono-Regular", Consolas, "Liberation Mono", monospace
+
+.post-body .hbe-input
+  font inherit
+
+.main-inner.index .post-header
+  margin-bottom 14px
+
+.main-inner.index .post-eof
+  margin 36px auto
+
+.main-inner.index .post-button
+  margin-top 12px
+
+.main-inner.index .post-title
+  font-size 24px
+
+@media (max-width: 767px)
+  .post-body
+    font-size 16px
+
+@media (prefers-reduced-motion: reduce)
+  *, *::before, *::after
+    scroll-behavior auto !important
+    animation none !important
+    transition none !important

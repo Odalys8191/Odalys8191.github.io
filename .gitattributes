@@ -1,0 +1,2 @@
+# Markdown hard breaks and the recovered code blocks retain original whitespace.
+*.md whitespace=-trailing-space,-space-before-tab

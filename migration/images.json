@@ -1,0 +1,54 @@
+[
+  {
+    "url": "https://cdn.luogu.com.cn/upload/image_hosting/i3rxm4zk.png",
+    "status": "saved",
+    "local": "/images/recovered/81a397147ed13e57.png",
+    "bytes": 39996
+  },
+  {
+    "url": "https://cdn.luogu.com.cn/upload/vjudge_pic/CF1534B/5d4fda0f26b85e9fedc3c103ba4d223f004efdcd.png",
+    "status": "saved",
+    "local": "/images/recovered/1604852e555efefd.png",
+    "bytes": 9517
+  },
+  {
+    "url": "https://img.gejiba.com/images/34e5b5904e9f4bc78d62d8476f88ed37.jpg",
+    "status": "unavailable",
+    "error": "curl: (35) LibreSSL/3.3.6: error:1404B438:SSL routines:ST_CONNECT:tlsv1 alert internal error"
+  },
+  {
+    "url": "https://s21.ax1x.com/2024/11/04/pArOdbt.jpg",
+    "status": "saved",
+    "local": "/images/recovered/1ca64eb7177ed074.jpg",
+    "bytes": 394164
+  },
+  {
+    "url": "https://s21.ax1x.com/2024/11/04/pArXWSe.jpg",
+    "status": "saved",
+    "local": "/images/recovered/f5253eb369e1bb11.jpg",
+    "bytes": 167395
+  },
+  {
+    "url": "https://s21.ax1x.com/2024/11/04/pArXfQH.jpg",
+    "status": "saved",
+    "local": "/images/recovered/54fd6055e49661f9.jpg",
+    "bytes": 463713
+  },
+  {
+    "url": "https://s21.ax1x.com/2024/11/04/pArqhyn.jpg",
+    "status": "saved",
+    "local": "/images/recovered/586d78d1870140e6.jpg",
+    "bytes": 3390606
+  },
+  {
+    "url": "https://s21.ax1x.com/2024/11/08/pAyRE5R.jpg",
+    "status": "saved",
+    "local": "/images/recovered/c87f7f2b62979207.jpg",
+    "bytes": 300007
+  },
+  {
+    "url": "https://www.helloimg.com/images/2021/10/14/C7nYwo.jpg",
+    "status": "unavailable",
+    "error": "curl: (56) The requested URL returned error: 404"
+  }
+]

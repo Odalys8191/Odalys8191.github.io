@@ -1,0 +1,35 @@
+#!/bin/sh
+set -eu
+cd "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+blog_node_version=$(cat .nvmrc)
+
+if [ "${1:-}" = setup ]; then
+  if [ ! -x .tools/node_modules/node/bin/node ]; then
+    npm install --prefix .tools --cache .npm-cache --save-exact --no-audit --no-fund "node@$blog_node_version"
+  fi
+  export PATH="$PWD/.tools/node_modules/node/bin:$PATH"
+  exec npm ci --cache .npm-cache --no-audit --no-fund
+fi
+
+if [ -x .tools/node_modules/node/bin/node ]; then
+  export PATH="$PWD/.tools/node_modules/node/bin:$PATH"
+fi
+if ! command -v node >/dev/null 2>&1 || [ "$(node -p 'process.versions.node.split(".")[0]')" != 24 ]; then
+  echo '请先运行 ./blog setup，或安装 .nvmrc 指定的 Node.js 版本。' >&2
+  exit 1
+fi
+case "${1:-start}" in
+  start|build|check|clean)
+    blog_command=${1:-start}
+    if [ "$#" -gt 0 ]; then shift; fi
+    exec npm run "$blog_command" -- "$@"
+    ;;
+  new)
+    shift
+    exec npm run new -- "$@"
+    ;;
+  *)
+    echo '用法：./blog [setup|start|build|check|clean|new "文章标题"]' >&2
+    exit 1
+    ;;
+esac

@@ -1,0 +1,10 @@
+node_modules/
+public/
+db.json
+.deploy_git/
+.tools/
+.npm-cache/
+.DS_Store
+recovery-audit/
+artifacts/
+*.log
