@@ -24,7 +24,7 @@ cd blog
 ./blog start
 ```
 
-首次迁移尚未合入 `main` 时，将上述 `--branch main` 改为 `--branch codex/blog-recovery`。如果已用 nvm 安装 `.nvmrc` 中的版本，也可以直接 `npm ci`、`npm start`；Windows 使用这些 npm 命令。
+如果已用 nvm 安装 `.nvmrc` 中的版本，也可以直接 `npm ci`、`npm start`；Windows 使用这些 npm 命令。
 
 ## 写文章
 
@@ -46,12 +46,11 @@ cd blog
 
 ## 发布到原来的 GitHub Pages
 
-第一次切换：
+源码已合入 `main`，`master` 保留原站发布快照。首次启用自动部署时，需要以下仓库设置：
 
-1. 将 `codex/blog-recovery` 的源码合入 `main`，保留 `master` 作为原站备份。
-2. 仓库 `Settings → Pages → Build and deployment → Source` 选择 **GitHub Actions**。
-3. 若 `github-pages` 环境有限制，在 `Settings → Environments → github-pages` 中允许 `main` 部署。
-4. 在 `Actions → Build and publish Hexo` 中检查运行结果；必要时在 `main` 手动运行一次。
+1. 仓库 `Settings → Pages → Build and deployment → Source` 选择 **GitHub Actions**。
+2. 若 `github-pages` 环境有限制，在 `Settings → Environments → github-pages` 中允许 `main` 部署。
+3. 在 `Actions → Build and publish Hexo` 中检查运行结果；必要时在 `main` 手动运行一次。
 
 恢复分支只构建和校验，不部署。`main` 的推送会自动构建、校验并部署。使用 GitHub 自带的 `GITHUB_TOKEN`，无需把个人访问令牌写进配置。
 
